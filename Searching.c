@@ -3,7 +3,7 @@ int binsearch (int a[], int i,int j, int key);
 int linsearch (int a[],int n, int key);
 int main ()
 {
-int a[30],key,n, result, op,i;
+    int a[30],key,n, result, op,i;
 do
 {
 printf("\nl) Linear Search\n2) Binary Search\n3) Quit");
