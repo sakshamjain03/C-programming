@@ -40,7 +40,7 @@ int main()
 }
     void insertion_sort(int a[],int n)
     {
-        int i,j,temp,k;
+            int i,j,temp,k;
         printf("\nUnsorted Data :");
         for(k=0;k<n;k++)
         printf("%5d",a[k]);
