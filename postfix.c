@@ -3,45 +3,45 @@
 #define MAX 50
 typedef struct stack
 {
-int data[MAX];
-int top;
+	int data[MAX];
+	int top;
 }stack;
-void init(stack *);
-int empty (stack *);
-int full(stack *);
-int pop(stack *);
-void push(stack *,int);
-void evaluate(char postfix[]);
+	void init(stack *);
+	int empty (stack *);
+	int full(stack *);
+	int pop(stack *);
+	void push(stack *,int);
+	void evaluate(char postfix[]);
 void main()
 {
-char postfix[30];
-printf("\n ]Enter a postfix expression :");
-gets(postfix);
-evaluate(postfix);
+	char postfix[30];
+	printf("\n ]Enter a postfix expression :");
+	gets(postfix);
+	evaluate(postfix);
 }
 void evaluate(char postfix[])
 { stack s;
-int op1,op2,val=0,i;
-init(&s);
+	int op1,op2,val=0,i;
+	init(&s);
 for(i=0;postfix[i]!='\0';i++)
 {
-if(isalpha(postfix[i]))
+	if(isalpha(postfix[i]))
 {
-printf("\nEnter the value of %c :",postfix[i]);
-scanf("%d",&val);
-push(&s,val);
+		printf("\nEnter the value of %c :",postfix[i]);
+		scanf("%d",&val);
+		push(&s,val);
 }
 else
 {
-op2=pop(&s);
-op1=pop(&s);
+	op2=pop(&s);
+	op1=pop(&s);
 switch(postfix[i])
 {
-case '+':push (&s,op1+op2);break;
-case '-':push (&s,op1-op2);break;
-case '*':push (&s,op1*op2);break;
-case '/':push (&s,op1/op2);break;
-case '%':push (&s,op1%op2);break;
+	case '+':push (&s,op1+op2);break;
+	case '-':push (&s,op1-op2);break;
+	case '*':push (&s,op1*op2);break;
+	case '/':push (&s,op1/op2);break;
+	case '%':push (&s,op1%op2);break;
 }
 }
 }
